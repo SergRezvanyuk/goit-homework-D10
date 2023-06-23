@@ -12,10 +12,14 @@ class Phone(Field):
     pass
 
 class Record:
-    def __init__(self, name):
+    def __init__(self, name, phone):
         self.name = name
-        self.phones = []
-
+        if phone:
+            self.phones = []
+            self.phones.append(phone)
+        else:
+            self.phones = []
+    
     def add_phone(self, phone):
         self.phones.append(phone)
 
